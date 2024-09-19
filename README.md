@@ -1,7 +1,7 @@
 # Python-Coding-Guidelines
 
 ## Table of Contents
-3. [Naming Convention](#name-convention)
+1. [Naming Convention](#name-convention)
 
 
 ## Naming Convention <a name="name-convention"></a>
