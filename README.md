@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Naming Convention](#name-convention)
-
+2. [Type Hinting](#type-hinting)
 
 ## Naming Convention <a name="name-convention"></a>
 
@@ -31,6 +31,13 @@ Sau đây là một vài cách đặt tên biến quy chuẩn:
 
 Ngoài ra, chúng ta có thể sử dụng thư viện [pep8-naming](https://github.com/PyCQA/pep8-naming) để có thể kiểm soát cách đặt tên cho các biến trong python project của mình.
 
+## Comment <a name="comment"></a>
+
+
+
+## Docstring <a name="docstring"></a>
+
+
 ## Type Hinting <a name="type-hinting"></a>
 
 Type hinting là cách dùng để xác định trước kiểu dữ liệu của một giá trị.
@@ -40,5 +47,13 @@ Ví dụ:
 def addBinary(a: int, b: int)-> int:
 ...
 ```
+Tuy nhiên, Python là một untyped language, do đó, nếu ta truyền một biến dạng `str` vào biến `a` ở ví dụ trên thì code vẫn sẽ chạy. Và dù đã có docstring rồi, nhưng với type hinting, chúng ta có thể sử dụng các tool để thực hiện Static Type Checking, cũng như là giúp các IDE cung cấp intellisense.
+
+Để Static Type Checking, chúng ta có thể sử dụng thư viện `mypy`.
+
+
+
+
+
 
 
