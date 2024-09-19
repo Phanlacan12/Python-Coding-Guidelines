@@ -1,9 +1,10 @@
 # Python-Coding-Guidelines
 
 ## Table of Contents
-1. [Name convention] (#naming-convention)
+3. [Proposed Convention](#proposed-convention)
 
-## Name convention <a name="naming-convention"></a>
+
+## Proposed Convention <a name="proposed-convention"></a>
 
 | Name                      | Convention | Code Example                                         |
 |---------------------------|------------|------------------------------------------------------|
