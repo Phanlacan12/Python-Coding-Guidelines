@@ -8,10 +8,19 @@
    
     1.2. [Comment](#comment)
    
-    1.3. [Comment](#comment)
+    1.3. [Docstring](#docstring)
 
     1.4. [Type Hinting](#type-hinting)
 
+    1.5. [Logging](#logging)
+
+2. [Các quy chuẩn tự động](#quy-chuan-thu-cong)
+
+    2.1. [Quy chuẩn chung của các tool hiện nay](#quy-chuan-chung)
+
+    2.2. [Quy chuẩn bảo mật](#security)
+
+    2.3. [Testing](#testing)
 
 
 
@@ -107,9 +116,9 @@ Sử dụng đúng các loại log:
 * Thông tin nhạy cảm: Không bao giờ ghi lại thông tin nhạy cảm như mật khẩu, thông tin thẻ tín dụng, hoặc dữ liệu cá nhân của người dùng. Điều này có thể gây rủi ro bảo mật.
 * Tránh log trong các khối mã thực thi lặp lại nhiều lần hoặc có yêu cầu hiệu suất cao (ví dụ: vòng lặp lồng nhau) vì nó có thể ảnh hưởng đến hiệu suất.
 
-## Các quy chuẩn tự động
+## Các quy chuẩn tự động <a name="quy-chuan-tu-dong"></a>
 
-### Quy chuẩn chung
+### Quy chuẩn chung của các tool hiện nay <a name="quy-chuan-chung"></a>
 
 Chúng ta hoàn toàn có tự động hóa bằng `pre-commit` với các công cụ và thư viện như flake8, pylint, black, isort. Bên cạnh các quy chuẩn ở trên, các tool này còn có thể hỗ trợ trong việc xử lý:
 * Code dài dòng: giới hạn mỗi dòng có một số ký tự nhất định.
@@ -126,7 +135,7 @@ Ngoài ra, trong `pylint` còn hỗ trợ:
 * Naming convention
 * Thừa nhận diện: Báo lỗi nếu một biến, hàm, hoặc lớp bị thừa mà không sử dụng.
 
-### Quy chuẩn bảo mật
+### Quy chuẩn bảo mật <a name="security"></a>
 Để không bị lộ lọt ra ngoài các secret key (ví dụ như API keys, token, mật khẩu) trong source code khi ta quản lý trên Git, chúng ta có những cách sau:
 * Đưa các file `.env` hoặc các file config chứa các secret key vào `.gitignore`.
 * Sử dụng các Environment Variables để không đưa trực tiếp key vào trong code.
@@ -134,6 +143,12 @@ Ngoài ra, trong `pylint` còn hỗ trợ:
   api_key = os.getenv('API_KEY')
   ```
 * Sử dụng một số tool để có thể phát hiện các secret key hoặc dữ liệu nhạy cảm có trong code: ví dụ như sử dụng Detect-secrets (by Yelp) trong pre-commits.
+
+### Testing <a name="testing"></a>
+Thực hiện viết các test case và thực hiện đầy đủ các quy trình test:
+* Unit Tests: Kiểm tra đơn lẻ các function, class đã hoạt động đúng như mong đợi.
+* Integration Tests: Kiểm tra tích hợp kết hợp nhiều đơn vị mã hoặc module lại với nhau để kiểm tra cách chúng hoạt động cùng nhau. Đảm bảo rằng các phần khác nhau của hệ thống làm việc tốt khi tương tác với nhau.
+
 
   
 
